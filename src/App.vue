@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <b-container fluid class="p-4 bg-dark">
+    <div id="app">
+      <h1 class="title">RICK AND MORTY</h1>
+      <router-view />
+    </div>
+  </b-container>
 </template>
 
-<style>
+<style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap");
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Waiting for the Sunrise", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+  min-height: 100vh;
+  h1 {
+    color: #83d2e4;
+    font-size: 6rem;
+    font-weight: 900;
+    text-shadow: 7px 10px 9px yellow;
+  }
+  @media (max-width: 526px) {
+    h1 {
+      font-size: 4.5rem;
+    }
+  }
 }
 </style>
