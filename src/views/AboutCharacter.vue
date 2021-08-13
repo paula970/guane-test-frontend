@@ -14,3 +14,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.about {
+  max-width: 1128px;
+  margin: auto;
+}
+</style>
