@@ -9,7 +9,7 @@ export default new Vuex.Store({
     characters: [],
     idsCharacters: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     infoCharacter: {},
-    page: 1
+    page: 1,
   },
   mutations: {
     SET_CHARACTERS(state, characters) {
@@ -45,24 +45,28 @@ export default new Vuex.Store({
         .getCharacter(state.idsCharacters)
         .then((response) => {
           commit("SET_CHARACTERS", response.data);
-          console.log("nuevo1", response.data);
         })
         .catch((error) => console.log(error));
     },
-    changeIdsAction({ commit }, arrayids) {
-      commit("SET_IDSCHARACTERS", arrayids);
-    },
-    changePageAction({ commit }, page) {
-      commit("SET_PAGE", page);
-    },
-    getMoreInfoAction({ commit }, id) {
+
+    getCharacterAction({ commit }, id) {
       request
         .getCharacter(id)
         .then((response) => {
           commit("SET_INFO_CHARACTER", response.data);
-          console.log("nuevo3", response.data);
         })
         .catch((error) => console.log(error));
+    },
+    deleteCharacterAction({ commit }) {
+      commit("SET_INFO_CHARACTER", {});
+    },
+
+    changeIdsAction({ commit }, arrayids) {
+      commit("SET_IDSCHARACTERS", arrayids);
+    },
+
+    changePageAction({ commit }, page) {
+      commit("SET_PAGE", page);
     },
   },
 });
